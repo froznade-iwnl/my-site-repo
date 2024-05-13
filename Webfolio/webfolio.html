@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85)
+}
+
+/* Transition */
+a, .btn {
+    transition: all 300ms ease;
+}
+
+/* For desktop */
+nav, .nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: palevioletred;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(211, 130, 157)
+}
+
+.logo {
+    font-size: 2rem
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+/* Sections */
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* Profile */
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+  /* position: relative;
+  overflow: hidden;
+  border-radius: 50%; */
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* About me */
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.education-container {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.details-container {
+    gap: 4rem;
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.sch_icon {
+    cursor: pointer;
+    height: 4rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Import font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+</style>
+
+<!-- Head -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arw4h's Portfolio</title>
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Arw4h</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   <section id="profile">
+    <div class="section__pic-container">
+        <img src="./assets/salt.png" alt="[trial] my profile picture">
+    </div>
+    <div class="section__text">
+        <p class="section__text__p1">Hi, I'm</p>
+        <h1 class="title">Raditya</h1>
+        <p class="section__text__p2">VJC Computing Student</p> 
+    </div>
+   </section>
+
+   <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img
+          src="./assets/salt.png"
+          alt="Profile picture"
+          class="about-pic"
+        />
+      </div>
+
+      <div class="about-details-container">
+        <div class="about-containers">
+            <div class="details-container">
+                <h3>Education</h3>
+                <div class="education-container">
+                    <div>
+                        <a href="https://www.clementitownsec.moe.edu.sg/"><img
+                        src="./assets/ctss.png"
+                        alt="ctss_logo"
+                        class="sch_icon"
+                        /></a>
+                        <p>Secondary School <br />(2022-2023)</p>
+
+                    </div>
+                    <div>
+                        <img
+                        src="./assets/m2km_logo.png"
+                        alt="m2km_logo"
+                        class="sch_icon"
+                        />
+                        <p>Senior High School <br />(2021-2022)</p>
+                    </div>
+                    <div>
+                        <img
+                        src="./assets/al-hikmah-logo.png"
+                        alt="al-hikmah-logo"
+                        class="sch_icon"
+                        />
+                        <p>Junior High School <br />(2018-2021)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-containers">
+            <div class="details-container">
+                <!-- <img
+                src="./assets/profile-pict-trial.jpeg"
+                alt="Experience icon"
+                class="icon"
+                /> -->
+                <h3>Experience</h3>
+                <p>2+ years</p>
+                <p>new years</p>
+            </div>
+        </div>
+
+
+        <div class="text-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
+            reprehenderit et laborum, rem, dolore eum quod voluptate
+            exercitationem nobis, nihil esse debitis maxime facere minus sint
+            delectus velit in eos quo officiis explicabo deleniti dignissimos.
+            Eligendi illum libero dolorum cum laboriosam corrupti quidem,
+            reiciendis ea magnam? Nulla, impedit fuga!
+          </p>
+        </div>
+      </div>
+    </div>
+    <img
+      src="./assets/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='./#experience'"
+    />
+  </section>
+    
+</body>
+</html>
