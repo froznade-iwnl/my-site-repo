@@ -1,112 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* For different screens */
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
-  }
-  section {
-    margin: 0 5%;
-  }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
-  .about-containers {
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-  }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .text-container {
-    text-align: justify;
-  }
-}
 
 *{
     margin: 0;
@@ -126,7 +23,7 @@ p {
 }
 
 /* Transition */
-a, .btn {
+a, .btn, .title {
     transition: all 300ms ease;
 }
 
@@ -154,10 +51,10 @@ a {
 }
 
 a:hover {
-    color: palevioletred;
+    color: gray;
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: rgb(211, 130, 157)
+    text-decoration-color: gray
 }
 
 .logo {
@@ -168,7 +65,10 @@ a:hover {
     cursor: default;
 }
 
-/* Sections */
+.sch-logo {
+    height: 4rem;
+}
+/* Section */
 
 section {
   padding-top: 4vh;
@@ -179,7 +79,9 @@ section {
 }
 
 .section-container {
-  display: flex;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
@@ -191,24 +93,38 @@ section {
 
 #profile {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
 }
 
-.section__pic-container {
+.profile-picture{
   display: flex;
   height: 400px;
   width: 400px;
   margin: auto 0;
-  /* position: relative;
-  overflow: hidden;
-  border-radius: 50%; */
+  padding: 2rem;
+}
+
+.profile-picture-round {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
 }
 
 .section__text {
-  align-self: center;
-  text-align: center;
+    text-align: center;
+    align-self:center;
 }
 
 .section__text p {
@@ -227,31 +143,39 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  cursor: default;
 }
 
-/* About me */
+.title:hover {
+    color: palevioletred;
+}
+
+/* About Me */
+
 #about {
-  position: relative;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+.education,
+.education-align,
+.education-container,
+.education-text,
+.education-content {
+    display: flex;
 }
 
-.about-details-container {
-  justify-content: center;
-  flex-direction: column;
+.education-container{
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.about-containers,
-.about-details-container {
-  display: flex;
-}
-
-.about-pic {
-  border-radius: 2rem;
+.education-img {
+    height: fit-content;
+    width: fit-content;
+    padding: 5rem;
+    border-radius: 2rem;
 }
 
 .arrow {
@@ -260,159 +184,437 @@ section {
   bottom: 2.5rem;
 }
 
-.education-container {
-    padding-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-}
 
-.details-container {
-    gap: 4rem;
+.education {
+    flex-direction: column;
+    align-items: center;
     padding: 1.5rem;
     flex: 1;
     background: white;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
+}
+
+.education-text {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.education-content {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-text {
+    padding-bottom: 2rem;
+}
+
+.education-align{
+    flex-direction: row;
+}
+
+/* Projects */
+
+#project {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-title,
+.project-container,
+.project-content {
+    display: flex;
+}
+
+.project-title {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.project-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 300px;
+  height: 300px;
+}
+
+.project-title {
+  margin: 1rem;
+  color: black;
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex: 1;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
     text-align: center;
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
 }
 
-.sch_icon {
-    cursor: pointer;
-    height: 4rem;
-    padding-bottom: 0.5rem;
+.project-btn:hover{
+    color: white;
+    background-color: black;
 }
 
-/* Import font Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* Footer */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    /* flex-direction: row; */
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display:flex;
+  }
+
+  .profile-picture {
+    width: auto;
+    height: 46vw;
+  }
+  
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  #profile,
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .project-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section,
+  .section-container {
+    height: fit-content;
+  }
+
+  section {
+    margin: 0 5%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .profile-picture {
+    width: auto;
+    height: 50vw;
+    justify-content: center;
+  }
+
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+  }
+  .details-container {
+    display: inline;
+    padding-top: 2rem;
+  }
+
+    .education-container {
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+}
+
 
 </style>
-
-<!-- Head -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arw4h's Portfolio</title>
+    <title>Arw4h's Space</title>
 </head>
-
 <body>
     <nav id="desktop-nav">
         <div class="logo">Arw4h</div>
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#project">Project</a></li>
-                <li><a href="#connect">Connect</a></li>
             </ul>
         </div>
     </nav>
 
-   <section id="profile">
-    <div class="section__pic-container">
-        <img src="./assets/salt.png" alt="[trial] my profile picture">
-    </div>
-    <div class="section__text">
-        <p class="section__text__p1">Hi, I'm</p>
-        <h1 class="title">Raditya</h1>
-        <p class="section__text__p2">VJC Computing Student</p> 
-    </div>
-   </section>
+    <section id="profile">
+        <div class="section-container">
+            <div class="profile-picture">
+                <img src="./assets/salt.png" alt="[trial] my profile picture">
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1">Hi, I'm</p>
+                <h1 class="title">Raditya</h1>
+                <p class="section__text__p2">I love cats.</p> 
+            </div>    
+        </div>
+        <div>
+            <a href="#about"><img class="icon" src="./assets/arrow.png" alt="arrow"></a>
+        </div>
+    </section>
 
-   <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
+    <section id="about">
+        <div class="about-text">
+            <p class="section__text__p1">Know me more!</p>
+            <h1 class="title">About Me</h1>
+        </div>
 
-    <div class="section-container">
-      <div class="section__pic-container">
-        <img
-          src="./assets/salt.png"
-          alt="Profile picture"
-          class="about-pic"
-        />
-      </div>
-
-      <div class="about-details-container">
-        <div class="about-containers">
-            <div class="details-container">
-                <h3>Education</h3>
-                <div class="education-container">
-                    <div>
-                        <a href="https://www.clementitownsec.moe.edu.sg/"><img
+            
+        <div class="education">
+            <h3 class="education-text">Education</h3>  
+            <div class="education-container">
+                <div class="education-content">
+                    <a href="https://www.clementitownsec.moe.edu.sg/">
+                        <img
                         src="./assets/ctss.png"
                         alt="ctss_logo"
-                        class="sch_icon"
-                        /></a>
-                        <p>Secondary School <br />(2022-2023)</p>
+                        class="sch-logo"
+                        />
+                    </a>
+                    <p style="text-align: center;">Secondary School</p>
+                    <p>(2022-2023)</p>
+                </div>
+                <div class="education-content">
+                    <img
+                    src="./assets/m2km_logo.png"
+                    alt="m2km_logo"
+                    class="sch-logo"
+                    />
+                    <p style="text-align: center;">Senior High School</p>
+                    <p>(2021-2022)</p>
+                </div>
+                <div class="education-content">
+                    <img
+                    src="./assets/al-hikmah-logo.png"
+                    alt="al-hikmah-logo"
+                    class="sch-logo"
+                    />
+                    <p style="text-align: center;">Junior High School</p>
+                    <p>(2018-2021)</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="education">
+            <h3 class="education-text">Past Competitions</h3>  
+            <div class="education-container">
+                <div class="education-content">
+                    <a href="https://noisg.comp.nus.edu.sg/noi/">
+                        <img
+                        src="./assets/noi-logo.png"
+                        alt="noi-logo"
+                        class="sch-logo"
+                        />
+                    </a>
+                        <p style="text-align: center;">NOI Bronze Medalist</p>
+                        <p>2023-2024</p>
+                </div>
+                <div class="education-content">
+                    <img
+                    src="./assets/swift-associate-logo.png"
+                    alt="swift-associate-logo"
+                    class="sch-logo"
+                    />
+                    <p style="text-align: center;">Swift Associate Developer</p>
+                    <p>2024</p>
+                </div>
+                <div class="education-content">
+                    <a href="https://www.scs.org.sg/awards/splash/2023/announcement">
+                        <img
+                        src="./assets/splash-awards-logo.png"
+                        alt="splash-awards-logo"
+                        class="sch-logo"
+                        />
+                    </a>
+                        <p style="text-align: center;">Splash Awards Finalist</p>
+                        <p>2023</p>
+                </div>
+            </div>
+        </div>
+        <a href="#project">
+            <img
+            src="./assets/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            />
+        </a>
+    </section>
 
+    <section id="project">
+        <div class="project-title">
+            <p class="section__text__p1">Browse my recent</p>
+            <h1 class="title">Projects</h1>
+        </div>
+
+        <div class="project-align">
+            <div class="project-container">
+                <div class="project-content color-container">
+                    <img
+                    src="./assets/project-1.png"
+                    alt="Project 1"
+                    class="project-img"
+                    />
+                
+                    <h2 class="project-sub-title project-title">Project: FLOW</h2>
+                    <div class="btn-container">
+                        <button
+                            class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/froznade-iwnl/flow-version-two'">
+                            Github
+                        </button>
                     </div>
-                    <div>
-                        <img
-                        src="./assets/m2km_logo.png"
-                        alt="m2km_logo"
-                        class="sch_icon"
-                        />
-                        <p>Senior High School <br />(2021-2022)</p>
+                </div>
+                <div class="project-content color-container">
+                    <img
+                    src="./assets/project-2.png"
+                    alt="Project 2"
+                    class="project-img"
+                    />
+                
+                    <h2 class="project-sub-title project-title">HalalSG</h2>
+                    <div class="btn-container">
+                        <button
+                            class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/froznade-iwnl/halal-food-finder'">
+                            Github
+                        </button>
                     </div>
-                    <div>
-                        <img
-                        src="./assets/al-hikmah-logo.png"
-                        alt="al-hikmah-logo"
-                        class="sch_icon"
-                        />
-                        <p>Junior High School <br />(2018-2021)</p>
+                </div>
+                <div class="project-content color-container">
+                    <img
+                    src="./assets/project-3.png"
+                    alt="Project 3"
+                    class="project-img"
+                    />
+                
+                    <h2 class="project-sub-title project-title">Dear Diary</h2>
+                    <div class="btn-container">
+                        <button
+                            class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/froznade-iwnl/splashAwards'">
+                            Github
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="about-containers">
-            <div class="details-container">
-                <!-- <img
-                src="./assets/profile-pict-trial.jpeg"
-                alt="Experience icon"
-                class="icon"
-                /> -->
-                <h3>Experience</h3>
-                <p>2+ years</p>
-                <p>new years</p>
-            </div>
-        </div>
-
-
-        <div class="text-container">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-            reprehenderit et laborum, rem, dolore eum quod voluptate
-            exercitationem nobis, nihil esse debitis maxime facere minus sint
-            delectus velit in eos quo officiis explicabo deleniti dignissimos.
-            Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-            reiciendis ea magnam? Nulla, impedit fuga!
-          </p>
-        </div>
-      </div>
-    </div>
-    <img
-      src="./assets/arrow.png"
-      alt="Arrow icon"
-      class="icon arrow"
-      onclick="location.href='./#experience'"
-    />
-  </section>
+    </section>
     
+    <footer>
+    <nav>
+        <div class="nav-links-container">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+        </div>
+    </nav>
+    <p>Copyright &#169; 2024 Raditya. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
